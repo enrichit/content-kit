@@ -9,7 +9,9 @@
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "test": "npm run unit"
+    "test": "npm run unit",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "vue": "^2.4.2"
@@ -66,7 +68,10 @@
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "@storybook/vue": "^3.2.10",
+    "@storybook/addon-actions": "^3.2.10",
+    "@storybook/addon-links": "^3.2.10"
   },
   "engines": {
     "node": ">= 4.0.0",
