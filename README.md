@@ -1,4 +1,4 @@
-# content-kit
+# Content Kit
 
 > A modular content managment editor.
 
@@ -25,3 +25,4 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Continuation of content-kit-experiments as a Vue app using single file components.
