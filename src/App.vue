@@ -1,17 +1,43 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <hello></hello>
+    <content-kit :mode="inputMode" :content="data"></content-kit>
+    <button v-on:click="switchMode()">Switch Mode</button>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import ContentKit from './components/ContentKit'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      inputMode: 'input',
+      // data: {type: 'ck-longtext', model: 'helo'}
+      data: {
+        type: 'ck-list',
+        model: [
+          {index: 0, type: `ck-longtext`, model: 'test1'},
+          {index: 1, type: `ck-longtext`, model: 'test2'}
+          // {index: 2, type: `ck-longtext`, model: 'test3'},
+          // {index: 3, type: `ck-longtext`, model: 'test4'},
+          // {index: 4, type: `ck-longtext`, model: 'test5'}
+        ]
+      }
+    }
+  },
   components: {
-    Hello
+    ContentKit
+  },
+  methods: {
+    switchMode () {
+      if (this.inputMode === 'render') {
+        this.inputMode = 'input'
+      } else {
+        this.inputMode = 'render'
+      }
+    }
   }
 }
 </script>
