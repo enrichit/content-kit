@@ -26,3 +26,8 @@ npm test
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 Continuation of content-kit-experiments as a Vue app using single file components.
+
+## Todo
+
+* Reduce redundency in imports between `content-kit` and `ck-list-input`/`ck-list-render`. Should only have to register dependencies once.
+* Add unit tests for existing components.
