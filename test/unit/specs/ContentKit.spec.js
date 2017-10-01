@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import ContentKit from '@/components/ContentKit'
+import { extendVueWithCkComponents } from './helpers'
+
+extendVueWithCkComponents(Vue)
 
 const ckFactory = (mode, content) => {
   mode = mode || 'render'

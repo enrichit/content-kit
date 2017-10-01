@@ -12,6 +12,7 @@
 import CkLongtextRender from '../ck-longtext/CkLongtextRender'
 
 export default {
+  name: 'ck-list-render',
   props: {
     content: { type: Array, required: true }
   },

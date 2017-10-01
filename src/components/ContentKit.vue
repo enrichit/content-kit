@@ -6,11 +6,6 @@
 </template>
 
 <script>
-import CkListInput from './ck-list/CkListInput'
-import CkListRender from './ck-list/CkListRender'
-import CkLongtextInput from './ck-longtext/CkLongtextInput'
-import CkLongtextRender from './ck-longtext/CkLongtextRender'
-
 export default {
   props: {
     mode: {
@@ -36,12 +31,6 @@ export default {
     model () {
       return this.content.model
     }
-  },
-  components: {
-    CkListInput,
-    CkListRender,
-    CkLongtextInput,
-    CkLongtextRender
   }
 }
 </script>

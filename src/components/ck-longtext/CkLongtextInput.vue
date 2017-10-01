@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ck-longtext-input">
     <textarea :value="content" v-on:input="updateContent"></textarea>
   </div>
 </template>

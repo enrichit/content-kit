@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ck-list-input">
     <div class="content-item" v-for="contentItem in content" :key="contentItem.index">
       <component
         :is="getComponentWithMode(contentItem.type)"
@@ -16,6 +16,8 @@
 import CkLongtextInput from '../ck-longtext/CkLongtextInput'
 
 export default {
+  // required so it can render itself recursively
+  name: 'ck-list-input',
   props: {
     content: { type: Array, required: true },
     update: { type: Function, required: true }

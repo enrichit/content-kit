@@ -18,11 +18,16 @@ export default {
       data: {
         type: 'ck-list',
         model: [
-          {index: 0, type: `ck-longtext`, model: 'test1'},
-          {index: 1, type: `ck-longtext`, model: 'test2'}
-          // {index: 2, type: `ck-longtext`, model: 'test3'},
-          // {index: 3, type: `ck-longtext`, model: 'test4'},
-          // {index: 4, type: `ck-longtext`, model: 'test5'}
+          {index: 0, type: 'ck-longtext', model: 'test1'},
+          {
+            index: 1,
+            type: 'ck-list',
+            model: [
+              {index: 0, type: `ck-longtext`, model: 'test3'},
+              {index: 1, type: `ck-longtext`, model: 'test4'},
+              {index: 2, type: `ck-longtext`, model: 'test5'}
+            ]
+          }
         ]
       }
     }
