@@ -10,6 +10,7 @@
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
+    "test-watch": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
