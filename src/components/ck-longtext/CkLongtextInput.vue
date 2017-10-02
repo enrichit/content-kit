@@ -1,6 +1,14 @@
 <template>
-  <div class="ck-longtext-input">
-    <textarea :value="content" v-on:input="updateContent"></textarea>
+  <div class="ck-longtext-input ui cards">
+    <div class="card">
+      <div class="content">
+        test
+      </div>
+
+      <div class="content">
+        <textarea :value="content" v-on:input="updateContent"></textarea>
+      </div>
+    </div>
   </div>
 </template>
 

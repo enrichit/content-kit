@@ -1,8 +1,7 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <content-kit :mode="inputMode" :content="data"></content-kit>
-    <button v-on:click="switchMode()">Switch Mode</button>
+  <div id="app" class="container">
+    <content-kit :mode="'input'" :content="data" class="ui form"></content-kit>
+    <content-kit :mode="'render'" :content="data" class="ui form"></content-kit>
   </div>
 </template>
 
@@ -47,13 +46,25 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  > div {
+    padding: 1em;
+  }
+}
+
+.ck-list-input {
+  padding: 1em 0 1em 1em;
+}
+
+.ck-longtext-input textarea {
 }
 </style>

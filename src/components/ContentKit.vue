@@ -1,8 +1,10 @@
 <template>
-  <component
-  :is="rootComponent"
-  :content="model"
-  :update="updateRootModel"></component>
+  <form class="ui form">
+    <component
+    :is="rootComponent"
+    :content="model"
+    :update="updateRootModel"></component>
+  </form>
 </template>
 
 <script>
