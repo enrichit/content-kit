@@ -32,4 +32,10 @@ describe('ContentKit.vue', () => {
     expect(ckFactory('input').rootComponent)
       .to.equal('ck-longtext-input')
   })
+
+  it('should update content when update it called', () => {
+    const vm = ckFactory()
+    vm.updateRootModel('bye bye')
+    expect(vm.content.model).to.be.string('bye bye')
+  })
 })

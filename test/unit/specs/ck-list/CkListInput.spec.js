@@ -3,7 +3,7 @@ import CkListInput from '@/components/ck-list/CkListInput'
 
 const ckListFactory = (content, update) => {
   content = content || [
-    {type: 'ck-longtext', model: 'hello'}
+    {type: 'ck-longtext', model: 'hello', index: 0}
   ]
 
   update = update || (() => {
@@ -42,5 +42,28 @@ describe('CkListInput.vue', () => {
 
     expect(vm.$el.getElementsByClassName('ck-longtext-input').length)
       .to.equal(1)
+  })
+
+  it('can update the content passed in via props', () => {
+    const vm = ckListFactory()
+    vm.updateListItem(0, 'bye bye')
+
+    expect(vm.content[0].model)
+      .to.equal('bye bye')
+  })
+
+  it('can update the content passed in via props', () => {
+    const vm = ckListFactory([
+      {type: 'ck-longtext', model: 'hello', index: 0},
+      {type: 'ck-longtext', model: 'hello 2', index: 1}
+    ])
+
+    vm.removeListItem(0)
+
+    expect(vm.content.length)
+      .to.equal(1)
+
+    expect(vm.content[0].index)
+      .to.equal(0)
   })
 })
