@@ -11,7 +11,6 @@
   </div>
 </template>
 
-
 <script>
 import CkLongtextInput from '../ck-longtext/CkLongtextInput'
 

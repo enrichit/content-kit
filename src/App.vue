@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
-    <content-kit :mode="'input'" :content="data" class="ui form"></content-kit>
-    <content-kit :mode="'render'" :content="data" class="ui form"></content-kit>
+    <content-kit :mode="'input'" :content="data"></content-kit>
+    <content-kit :mode="'render'" :content="data"></content-kit>
   </div>
 </template>
 
@@ -12,8 +12,6 @@ export default {
   name: 'app',
   data () {
     return {
-      inputMode: 'input',
-      // data: {type: 'ck-longtext', model: 'helo'}
       data: {
         type: 'ck-list',
         model: [
@@ -63,8 +61,5 @@ export default {
 
 .ck-list-input {
   padding: 1em 0 1em 1em;
-}
-
-.ck-longtext-input textarea {
 }
 </style>
