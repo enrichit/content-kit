@@ -31,10 +31,11 @@ Continuation of content-kit-experiments as a Vue app using single file component
 
 ## Todo
 
-* ~~Reduce redundency in imports between `content-kit` and `ck-list-input`/`ck-list-render`. Should only have to register dependencies once.~~
-* ~~Add unit tests for existing components.~~
-* More styling on input componments.
-* Better controls on `ck-list-input`.
-* Sort out story book for content components.
-* Add more content components.
-* More visually appealing demo.
+- [x] Reduce redundency in imports between `content-kit` and `ck-list-input`/`ck-list-render`. Should only have to register dependencies once.~~
+- [x] Add unit tests for existing components.
+- [ ] More styling on input componments.
+- [ ] Better controls on `ck-list-input`.
+- [ ] Sort out story book for content components.
+- [ ] Add more content components.
+- [ ] More visually appealing demo.
+- [ ] Internationalisation.

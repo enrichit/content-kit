@@ -12,8 +12,8 @@ import CkLongtextRender from './components/ck-longtext/CkLongtextRender'
 
 const ckConfiguration = configurator(Vue)
 
-ckConfiguration.addContentComponent('ck-list', CkListInput, CkListRender)
-ckConfiguration.addContentComponent('ck-longtext', CkLongtextInput, CkLongtextRender)
+ckConfiguration.addContentComponent('List', 'ck-list', CkListInput, CkListRender)
+ckConfiguration.addContentComponent('Longtext', 'ck-longtext', CkLongtextInput, CkLongtextRender)
 
 Vue.config.productionTip = false
 
