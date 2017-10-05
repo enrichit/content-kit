@@ -2,6 +2,8 @@
 
 > A modular content managment editor.
 
+[![CircleCI](https://circleci.com/gh/enrichit/content-kit/tree/master.svg?style=svg)](https://circleci.com/gh/enrichit/content-kit/tree/master)
+
 ## Build Setup
 
 ``` bash
@@ -33,3 +35,6 @@ Continuation of content-kit-experiments as a Vue app using single file component
 * ~~Add unit tests for existing components.~~
 * More styling on input componments.
 * Better controls on `ck-list-input`.
+* Sort out story book for content components.
+* Add more content components.
+* More visually appealing demo.
