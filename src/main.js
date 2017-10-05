@@ -3,17 +3,19 @@
 import Vue from 'vue'
 import App from './App'
 
-import { addContentComponent } from './components/config'
+import configurator from './components/configurator'
 
 import CkListInput from './components/ck-list/CkListInput'
 import CkListRender from './components/ck-list/CkListRender'
 import CkLongtextInput from './components/ck-longtext/CkLongtextInput'
 import CkLongtextRender from './components/ck-longtext/CkLongtextRender'
 
-Vue.config.productionTip = false
+const ckConfiguration = configurator(Vue)
 
-addContentComponent('ck-list', CkListInput, CkListRender)
-addContentComponent('ck-longtext', CkLongtextInput, CkLongtextRender)
+ckConfiguration.addContentComponent('ck-list', CkListInput, CkListRender)
+ckConfiguration.addContentComponent('ck-longtext', CkLongtextInput, CkLongtextRender)
+
+Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
