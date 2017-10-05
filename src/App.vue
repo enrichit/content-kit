@@ -31,15 +31,6 @@ export default {
   },
   components: {
     ContentKit
-  },
-  methods: {
-    switchMode () {
-      if (this.inputMode === 'render') {
-        this.inputMode = 'input'
-      } else {
-        this.inputMode = 'render'
-      }
-    }
   }
 }
 </script>
@@ -52,14 +43,8 @@ export default {
 
 .container {
   display: grid;
+  padding: 1em;
   grid-template-columns: 1fr 1fr;
-
-  > div {
-    padding: 1em;
-  }
-}
-
-.ck-list-input {
-  padding: 1em 0 1em 1em;
+  grid-gap: 1em;
 }
 </style>

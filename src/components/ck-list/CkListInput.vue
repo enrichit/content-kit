@@ -1,6 +1,10 @@
 <template>
   <div class="ck-list-input">
-    <div class="content-item" v-for="contentItem in content" :key="contentItem.index">
+    <div class="ck-list-content-header">
+      <em>{{ listHeader }}</em>
+    </div>
+
+    <div class="ck-list-content-item" v-for="contentItem in content" :key="contentItem.index">
       <component
         :is="getComponentWithMode(contentItem.type)"
         :content="contentItem.model"
@@ -46,8 +50,34 @@ export default {
       this.update(this.content)
     }
   },
+  computed: {
+    listHeader () {
+      return `List: ${this.content.length} items`
+    }
+  },
   components: {
     CkLongtextInput
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.ck-list-content-header {
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid rgba(34, 36, 38, .15);
+}
+
+.ck-list-content-item {
+  padding: 0 1em;
+}
+
+.ck-list-input {
+  border: 1px solid rgba(34, 36, 38, .15);
+  border-radius: .25em;
+}
+
+.ck-list-content-item {
+  margin-bottom: 1em;
+}
+</style>
