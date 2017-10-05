@@ -66,4 +66,7 @@ describe('CkListInput.vue', () => {
     expect(vm.content[0].index)
       .to.equal(0)
   })
+
+  it ('can add a new content item', {
+  })
 })

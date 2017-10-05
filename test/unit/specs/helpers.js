@@ -3,9 +3,13 @@ import CkLongtextInput from '@/components/ck-longtext/CkLongtextInput'
 import CkListRender from '@/components/ck-list/CkListRender'
 import CkLongtextRender from '@/components/ck-longtext/CkLongtextRender'
 
+import configurator from '@/components/configurator'
+
 export const extendVueWithCkComponents = (Vue) => {
-  Vue.component('ck-list-input', CkListInput)
-  Vue.component('ck-list-render', CkListRender)
-  Vue.component('ck-longtext-input', CkLongtextInput)
-  Vue.component('ck-longtext-render', CkLongtextRender)
+  const config = configurator(Vue)
+
+  config.addContentComponent ('Longtext', 'ck-longtext', CkListInput, CkListRender)
+  config.addContentComponent ('List', 'ck-list', CkListInput, CkListRender, {
+    childComponents: 'ck-longtext'
+  })
 }
