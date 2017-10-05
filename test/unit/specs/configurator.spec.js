@@ -15,7 +15,7 @@ describe('config.js', () => {
     const Vue = {component: () => {}}
     const spy = sinon.spy(Vue, 'component')
 
-    contentConfig(Vue).addContentComponent('', {}, {}, {})
+    contentConfig(Vue).addContentComponent('', '', {}, {}, {})
 
     expect(spy.calledTwice).to.be.true // eslint-disable-line
   })
@@ -26,8 +26,41 @@ describe('config.js', () => {
 
     const configObject = contentConfig(Vue)
 
-    configObject.addContentComponent('test', {}, {}, {})
-    expect(() => configObject.addContentComponent('test', {}, {}, {}))
-      .to.throw('test is already defined as a content component.')
+    configObject.addContentComponent('', 'test', {}, {}, {})
+    expect(() => configObject.addContentComponent('', 'test', {}, {}, {}))
+      .to.throw('`test` is already defined as a content component.')
+  })
+
+  it('can get details of all registered components', () => {
+    const Vue = {component: () => {}}
+    const configObject = contentConfig(Vue)
+
+    configObject.addContentComponent('', 'test1', {}, {}, {})
+    configObject.addContentComponent('', 'test2', {}, {}, {})
+
+    expect(configObject.getRegisteredComponents())
+      .to.include.members(['test1', 'test2'])
+  })
+
+  it('can get options and name of a single component', () => {
+    const Vue = {component: () => {}}
+    const configObject = contentConfig(Vue)
+
+    configObject.addContentComponent('', 'test1', {}, {}, {
+      test1: 'hello'
+    })
+
+    const testObj = configObject.getComponent('test1')
+
+    expect(testObj)
+      .to.have.keys('name', 'options')
+  })
+
+  it('throws an error when looking for a non-registered component', () => {
+    const Vue = {component: () => {}}
+    const configObject = contentConfig(Vue)
+
+    expect(() => configObject.getComponent('test1'))
+      .to.throw('`test1` is not registered with the content-kit configurator.')
   })
 })
